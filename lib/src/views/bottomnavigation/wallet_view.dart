@@ -11,9 +11,9 @@ class WalletView extends StatefulWidget {
 }
 
 class _WalletViewState extends State<WalletView> {
-  TextEditingController _textController;
+  late TextEditingController _textController;
   String myData = '';
-  Future<AccountModel> futureAccount;
+  late Future<AccountModel> futureAccount;
 
   @override
   void initState() {
@@ -37,7 +37,7 @@ class _WalletViewState extends State<WalletView> {
               future: futureAccount,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return Text(snapshot.data.balance);
+                  return Text(snapshot.data!.balance);
                 } else if (snapshot.hasError) {
                   return Text("${snapshot.error}");
                 }

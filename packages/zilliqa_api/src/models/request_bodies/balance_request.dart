@@ -1,15 +1,15 @@
-import 'default_body.dart';
-import 'abstract_body.dart';
+import 'abstract_request.dart';
+import 'default_request.dart';
 
-class BalanceBody extends AbstractBody {
+class BalanceRequestBody extends AbstractRequestBody {
   List<String> address = [];
-  late AbstractBody defaultBody;
+  late AbstractRequestBody defaultBody;
 
-  BalanceBody.defaultBody() {
-    defaultBody = DefaultBody();
+  BalanceRequestBody.defaultBody() {
+    defaultBody = DefaultRequestBody();
   }
 
-  BalanceBody.specialBody(AbstractBody specialBody) {
+  BalanceRequestBody.specialBody(AbstractRequestBody specialBody) {
     defaultBody = specialBody;
   }
 

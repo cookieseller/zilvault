@@ -5,7 +5,7 @@ class AccountModel {
   final String balance;
   final int nonce;
 
-  AccountModel({this.balance, this.nonce});
+  AccountModel({required this.balance, required this.nonce});
 
   String getBalance() {
     return balance;

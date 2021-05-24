@@ -4,5 +4,5 @@ part of 'address_bloc.dart';
 abstract class AddressState {}
 
 class AddressInitial extends AddressState {
-  final String address;
+  final String address = "";
 }

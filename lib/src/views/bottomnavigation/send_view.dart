@@ -8,7 +8,7 @@ class SendView extends StatefulWidget {
 }
 
 class _SendViewState extends State<SendView> {
-  TextEditingController _textController;
+  late TextEditingController _textController;
 
   @override
   void initState() {

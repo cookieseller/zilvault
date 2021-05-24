@@ -8,7 +8,7 @@ class ReceiveView extends StatefulWidget {
 }
 
 class _ReceiveViewState extends State<ReceiveView> {
-  TextEditingController _textController;
+  late TextEditingController _textController;
 
   @override
   void initState() {

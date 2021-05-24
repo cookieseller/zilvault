@@ -8,7 +8,7 @@ class TransactionsView extends StatefulWidget {
 }
 
 class _TransactionsViewState extends State<TransactionsView> {
-  TextEditingController _textController;
+  late TextEditingController _textController;
 
   @override
   void initState() {

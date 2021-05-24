@@ -10,7 +10,7 @@ class AddressConverter {
     for (var p = 0; p < data.length; ++p) {
       var value = data[p];
       if (value < 0 || value >> fromWidth != 0) {
-        return null;
+        return "";
       }
       acc = (acc << fromWidth) | value;
       bits += fromWidth;

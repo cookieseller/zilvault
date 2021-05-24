@@ -3,7 +3,7 @@ import 'package:zilvault/src/views/bottomnavigation/bottom_navigation_route.dart
 import 'package:zilvault/src/views/bottomnavigation/navigation_bar_item.dart';
 
 class AppScreen extends StatefulWidget {
-  AppScreen({this.title}) : super();
+  AppScreen({required this.title}) : super();
 
   final String title;
 
