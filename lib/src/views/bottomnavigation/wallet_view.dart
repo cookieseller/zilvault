@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zilvault/src/domain/utils/address_converter.dart';
+import 'package:zilvault/src/utils/address_converter.dart';
 import 'package:zilvault/zilliqa/account.dart';
 import 'package:zilvault/zilliqa/account_model.dart';
 

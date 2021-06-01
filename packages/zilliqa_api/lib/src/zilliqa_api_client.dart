@@ -1,16 +1,17 @@
 import 'dart:convert';
+import 'package:blockchain_interface/blockchain_interface.dart';
 import 'package:http/http.dart' as http;
 import 'models/balance.dart';
 import 'models/request_bodies/balance_request.dart';
 
 class BalanceRequestFailure implements Exception {}
 
-class ZilliqaApiClient {
+class ZilliqaApiClient implements BlockchainInterface {
   final http.Client _httpClient;
 
   ZilliqaApiClient({http.Client? httpClient}) : _httpClient = httpClient ?? http.Client();
 
-  Future<Balance> getAddressBalance(String address) async {
+  Future<String> getAddressBalance(String address) async {
     BalanceRequestBody body = BalanceRequestBody.defaultBody();
     body.address.add(address);
 
@@ -29,6 +30,8 @@ class ZilliqaApiClient {
       throw BalanceRequestFailure();
     }
 
-    return Balance.fromJson(balanceJson.first as Map<String, dynamic>);
+    final balance = Balance.fromJson(balanceJson.first as Map<String, dynamic>);
+
+    return balance.balance;
   }
 }
