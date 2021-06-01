@@ -25,5 +25,5 @@ class BalanceUpdateSuccess extends BalanceState {
 }
 
 class BalanceUpdateFailure extends BalanceState {
-  const BalanceUpdateFailure(String balance) : super(balance);
+  const BalanceUpdateFailure() : super.empty();
 }

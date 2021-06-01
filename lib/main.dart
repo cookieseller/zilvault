@@ -1,5 +1,6 @@
+import 'package:crypto_repository/crypto_repository.dart';
 import 'package:flutter/material.dart';
-import 'src/views/app_screen.dart';
+import 'app.dart';
 
 void main() async {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: AppScreen(title: 'ZilVault'),
+      home: CryptoApp(cryptoRepository: CryptoRepository()),
     );
   }
 }

@@ -8,7 +8,14 @@ abstract class BalanceEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class BalanceUpdatieRequestedEvent extends BalanceEvent {}
+class BalanceUpdateRequestedEvent extends BalanceEvent {
+  final String address;
+
+  const BalanceUpdateRequestedEvent({required this.address});
+
+  @override
+  List<Object> get props => [address];
+}
 
 class BalanceUpdatingEvent extends BalanceEvent {}
 
