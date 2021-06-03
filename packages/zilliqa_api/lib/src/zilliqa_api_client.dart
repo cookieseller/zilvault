@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:blockchain_interface/blockchain_interface.dart';
+import 'package:decimal/decimal.dart';
 import 'package:http/http.dart' as http;
 import 'models/balance.dart';
 import 'models/request_bodies/balance_request.dart';
@@ -25,13 +26,12 @@ class ZilliqaApiClient implements BlockchainInterface {
       throw BalanceRequestFailure();
     }
 
-    final balanceJson = jsonDecode(response.body) as List;
-    if (balanceJson.isEmpty) {
-      throw BalanceRequestFailure();
-    }
 
-    final balance = Balance.fromJson(balanceJson.first as Map<String, dynamic>);
 
-    return balance.balance;
+    final Map<String, dynamic> result = jsonDecode(response.body)['result'];
+
+    final balance = Decimal.parse(result['balance']) * Decimal.parse('10').pow(12 * -1);
+
+    return balance.toString();
   }
 }

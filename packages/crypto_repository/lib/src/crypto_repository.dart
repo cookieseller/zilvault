@@ -8,7 +8,6 @@ class CryptoRepository {
   CryptoRepository({ZilliqaApiClient? apiClient}) : _apiClient = apiClient ?? ZilliqaApiClient();
   
     Future<String> getBalance(String address) {
-      return Future<String>.value('Back to the future!');
+      return _apiClient.getAddressBalance(address);
     }
 }
-  

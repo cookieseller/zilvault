@@ -14,6 +14,9 @@ class BalancePage extends StatelessWidget {
         child: BlocBuilder<BalanceBloc, BalanceState>(
           builder: (context, state) {
             final String balance = state.balance;
+            if (state is BalanceUpdatingEvent) {
+              return Center(child: CircularProgressIndicator());
+            }
 
             return Text(balance);
           }
